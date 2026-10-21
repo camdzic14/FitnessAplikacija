@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Vjezbi</title>
+    <style>
+        body { font-family: sans-serif; margin: 24px; }
+        nav a { margin-right: 12px; }
+        .card { border:1px solid #ddd; padding:16px; border-radius:8px; margin-top:16px; }
+        .row { display:flex; gap:24px; }
+        .col { flex:1; }
+    </style>
+</head>
+<body>
+<h1>Pregled vjezbi</h1>
+<nav>
+    <a href="/exercise">Exercise</a>
+    <a href="/trainers">Trainers</a>
+</nav>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th><th>Naziv vjezbi</th><th>Kategorija</th><th>Trener</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="exercise : ${exercise}">
+        <td th:text="${exercise.Id}">1</td>
+        <td th:text="${exercise.title}">Ime</td>
+        <td th:text="${trainer.category}">Specijalnost</td>
+        <td th:text="${trainer.trainer">0</td>
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

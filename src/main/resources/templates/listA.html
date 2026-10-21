@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Trenera</title>
+    <style>
+        body { font-family: sans-serif; margin: 24px; }
+        nav a { margin-right: 12px; }
+        .card { border:1px solid #ddd; padding:16px; border-radius:8px; margin-top:16px; }
+        .row { display:flex; gap:24px; }
+        .col { flex:1; }
+    </style>
+</head>
+<body>
+<h1>Pregled trenera</h1>
+<nav>
+    <a href="/exercise">Exercise</a>
+    <a href="/trainers">Trainers</a>
+</nav>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th><th>Ime</th><th>Specijalnost</th><th>Iskustvo</th><th>Akcija</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="trainers : ${trainers}">
+        <td th:text="${trainer.id}">1</td>
+        <td th:text="${trainer.name}">Ime</td>
+        <td th:text="${trainer.speciality}">Specijalnost</td>
+        <td th:text="${trainer.experienceYears">0</td>
+        <td>
+            <a th:href="@{'/a/action/' + ${trainer.id}">Pogledajdodijeljene vjezbe</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
